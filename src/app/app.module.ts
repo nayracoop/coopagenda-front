@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //Translation
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -8,18 +9,20 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalCreateSlotComponent } from './modal-create-slot/modal-create-slot.component';
+import { ModalCreateProposalComponent } from './modal-create-proposal/modal-create-proposal.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ModalCreateSlotComponent,
+    ModalCreateProposalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

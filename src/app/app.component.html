@@ -1,16 +1,18 @@
-<header>
-  <h1>coopagenda</h1>
-  <div>logged in ? logged-user : third-party-login</div>
-</header>
-<sidebar>
-  <div>create slot (if user === admin)</div>
-  <div>create proposal (if user !== admin)</div>
-</sidebar>
-<main>
-  <div>lista de slots</div>
-  <div>modal view proposal</div>
-  <div>modal create slot</div>
-  <div>modal edit slot</div>
-  <div>modal create proposal</div>
-  <div>modal edit proposal</div>
-</main>
+<div class="container">
+  <nav ngbNav class="navbar navbar-default navbar-header row">
+    <h1 class="navbar-brand">coopagenda</h1>
+    <div ngbNavItem>logged in ? logged-user : third-party-login</div>
+  </nav>
+  <div class="row">
+    <div id="sidebar" placement="right" class="col-2">
+      <modal-create-slot></modal-create-slot>
+      <modal-create-proposal></modal-create-proposal>
+    </div>
+    <main class="col-10">
+      <div>lista de slots</div>
+      <div>modal view proposal</div>
+      <div>modal edit slot</div>
+      <div>modal edit proposal</div>
+    </main>
+  </div>
+</div>
