@@ -5,6 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
   public isAdmin = true;
-  public id = "1";
+  public id = 1;
   constructor() { }
 }

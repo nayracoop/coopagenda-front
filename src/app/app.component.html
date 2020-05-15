@@ -10,13 +10,14 @@
     </div>
     <main class="col-10">
       <div>lista de slots</div>
-      <div class="card">
-        <p>for slot in slots</p>
+      <div *ngFor="let slot of slots.data" class="card">
+        <h4>{{slot.id}}</h4>
+        <p>{{slot.date}}</p>
         <ngbd-modal *ngIf="user.isAdmin" label="Edit slot" id="editSlot"></ngbd-modal>
-        <div class="card-body">
-          <p class="card-title">for proposal in proposals of slot</p>
+        <div  *ngFor="let proposal of slot.proposals" class="card-body">
+          <h5 class="card-title">{{proposal.name}}</h5>
           <ngbd-modal label="View proposal" id="viewProposal"></ngbd-modal>
-          <ngbd-modal label="Edit proposal (if id=user.id)" id="editProposal"></ngbd-modal>
+          <ngbd-modal label="Edit proposal" *ngIf="proposal.userId === user.id" id="editProposal"></ngbd-modal>
         </div>
       </div>
     </main>
