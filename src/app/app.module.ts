@@ -11,14 +11,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ModalCreateSlotContent } from './modal-create-slot/modal-create-slot.component';
 import { ModalCreateProposalContent } from './modal-create-proposal/modal-create-proposal.component';
-import { NgbdModalComponent } from './ngbd-modal/ngbd-modal.component';
+import { NgbdModalComponent, NgbdModalContent } from './ngbd-modal/ngbd-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModalCreateSlotContent,
     ModalCreateProposalContent,
-    NgbdModalComponent
+    NgbdModalComponent,
+    NgbdModalContent // delete after all content is created
   ],
   imports: [
     BrowserModule,
@@ -27,7 +28,9 @@ import { NgbdModalComponent } from './ngbd-modal/ngbd-modal.component';
   ],
   entryComponents: [
     ModalCreateSlotContent,
-    ModalCreateProposalContent
+    ModalCreateProposalContent,
+    NgbdModalContent // delete after all content is created
+
   ],
   bootstrap: [AppComponent]
 })
