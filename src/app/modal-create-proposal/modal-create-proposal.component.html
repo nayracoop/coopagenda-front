@@ -1,12 +1,11 @@
-<ng-template #createProposal let-modal>
+<form #createProposal (ngSubmit)="save()">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-create-proposal-title">Create new proposal</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <form>
       <div class="form-group">
         <label for="dateOfBirth">Date of birth</label>
         <div class="input-group">
@@ -16,11 +15,9 @@
           </div>
         </div>
       </div>
-    </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close(save('proposal'))">Save</button>
+    <button type="button" class="btn btn-outline-dark btn-success" (click)="save()">Save</button>
   </div>
-</ng-template>
+</form>
 
-<button class="btn btn-lg btn-outline-primary" (click)="open(createProposal)">create proposal (if user!=admin)</button>

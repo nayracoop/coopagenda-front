@@ -1,12 +1,11 @@
-<ng-template #createSlot let-modal>
+<form #createSlot (ngSubmit)="save()">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-create-slot-title">Create new slot</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <form>
       <div class="form-group">
         <label for="dateOfNewSlot">new slot date</label>
         <div class="input-group">
@@ -22,11 +21,8 @@
           </div>
         </div>
       </div>
-    </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close(save(dp))">create</button>
+    <button type="button" class="btn btn-outline-dark btn-success" (click)="save()">create</button>
   </div>
-</ng-template>
-
-<button class="btn btn-lg btn-outline-primary" (click)="open(createSlot)">create slot (if user==admin)</button>
+</form>

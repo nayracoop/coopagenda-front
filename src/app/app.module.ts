@@ -25,6 +25,10 @@ import { NgbdModalComponent } from './ngbd-modal/ngbd-modal.component';
     AppRoutingModule,
     NgbModule
   ],
+  entryComponents: [
+    ModalCreateSlotContent,
+    ModalCreateProposalContent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
