@@ -5,14 +5,20 @@
   </nav>
   <div class="row">
     <div id="sidebar" placement="right" class="col-2">
-      <ngbd-modal label="Create Slot" id="createSlot"></ngbd-modal>
+      <ngbd-modal *ngIf="user.isAdmin" label="Create Slot" id="createSlot"></ngbd-modal>
       <ngbd-modal label="Create proposal" id="createProposal"></ngbd-modal>
     </div>
     <main class="col-10">
       <div>lista de slots</div>
-      <ngbd-modal label="View proposal" id="viewProposal"></ngbd-modal>
-      <ngbd-modal label="Edit proposal" id="editProposal"></ngbd-modal>
-      <ngbd-modal label="Edit slot" id="editSlot"></ngbd-modal>
+      <div class="card">
+        <p>for slot in slots</p>
+        <ngbd-modal *ngIf="user.isAdmin" label="Edit slot" id="editSlot"></ngbd-modal>
+        <div class="card-body">
+          <p class="card-title">for proposal in proposals of slot</p>
+          <ngbd-modal label="View proposal" id="viewProposal"></ngbd-modal>
+          <ngbd-modal label="Edit proposal (if id=user.id)" id="editProposal"></ngbd-modal>
+        </div>
+      </div>
     </main>
   </div>
 </div>

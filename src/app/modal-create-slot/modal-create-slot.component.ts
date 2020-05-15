@@ -9,9 +9,9 @@ export class ModalCreateSlotContent {
 
   constructor(public activeModal: NgbActiveModal) {}
 
-  save() {
+  save(data) {
     // POST new slot
-    console.log("saving")
+    console.log("saving", data)
     this.activeModal.close("Submit");
   }
 }
