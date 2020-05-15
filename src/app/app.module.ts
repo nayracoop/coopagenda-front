@@ -11,12 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ModalCreateSlotComponent } from './modal-create-slot/modal-create-slot.component';
 import { ModalCreateProposalComponent } from './modal-create-proposal/modal-create-proposal.component';
+import { NgbdModalComponent } from './ngbd-modal/ngbd-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModalCreateSlotComponent,
-    ModalCreateProposalComponent
+    ModalCreateProposalComponent,
+    NgbdModalComponent
   ],
   imports: [
     BrowserModule,
