@@ -12,10 +12,16 @@ export class ModalCreateProposalComponent {
   constructor(private modalService: NgbModal) {}
 
   open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-create-proposal-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed`;
     });
+  }
+
+  save(data) {
+    // POST new slot proposal
+
+    console.log("saving", data);
   }
 }
