@@ -6,7 +6,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
   selector: 'modal-create-proposal',
   templateUrl: './modal-create-proposal.component.html'
 })
-export class ModalCreateProposalComponent {
+export class ModalCreateProposalContent {
   closeResult = '';
 
   constructor(private modalService: NgbModal) {}

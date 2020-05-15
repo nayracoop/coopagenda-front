@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalCreateSlotComponent } from './modal-create-slot.component';
+import { ModalCreateSlotContent } from './modal-create-slot.component';
 
-describe('ModalCreateSlotComponent', () => {
-  let component: ModalCreateSlotComponent;
-  let fixture: ComponentFixture<ModalCreateSlotComponent>;
+describe('ModalCreateSlotContent', () => {
+  let component: ModalCreateSlotContent;
+  let fixture: ComponentFixture<ModalCreateSlotContent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalCreateSlotComponent ]
+      declarations: [ ModalCreateSlotContent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalCreateSlotComponent);
+    fixture = TestBed.createComponent(ModalCreateSlotContent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

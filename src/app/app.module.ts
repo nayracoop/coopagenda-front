@@ -9,15 +9,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ModalCreateSlotComponent } from './modal-create-slot/modal-create-slot.component';
-import { ModalCreateProposalComponent } from './modal-create-proposal/modal-create-proposal.component';
+import { ModalCreateSlotContent } from './modal-create-slot/modal-create-slot.component';
+import { ModalCreateProposalContent } from './modal-create-proposal/modal-create-proposal.component';
 import { NgbdModalComponent } from './ngbd-modal/ngbd-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModalCreateSlotComponent,
-    ModalCreateProposalComponent,
+    ModalCreateSlotContent,
+    ModalCreateProposalContent,
     NgbdModalComponent
   ],
   imports: [

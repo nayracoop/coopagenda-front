@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import { ModalCreateProposalComponent } from '../modal-create-proposal/modal-create-proposal.component'
-import { ModalCreateSlotComponent } from '../modal-create-slot/modal-create-slot.component';
+import { ModalCreateProposalContent } from '../modal-create-proposal/modal-create-proposal.component'
+import { ModalCreateSlotContent } from '../modal-create-slot/modal-create-slot.component';
 
 
 @Component({
@@ -11,8 +11,8 @@ import { ModalCreateSlotComponent } from '../modal-create-slot/modal-create-slot
 })
 export class NgbdModalComponent {
   content = {
-    createSlot: ModalCreateSlotComponent,
-    createProposal: ModalCreateProposalComponent
+    createSlot: ModalCreateSlotContent,
+    createProposal: ModalCreateProposalContent
   }
 
   constructor(private modalService: NgbModal) { }

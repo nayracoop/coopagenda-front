@@ -5,7 +5,7 @@ import {NgbModal, NgbTimepicker} from '@ng-bootstrap/ng-bootstrap';
   selector: 'modal-create-slot',
   templateUrl: './modal-create-slot.component.html',
 })
-export class ModalCreateSlotComponent {
+export class ModalCreateSlotContent {
   closeResult = '';
   
   constructor(private modalService: NgbModal) {}
