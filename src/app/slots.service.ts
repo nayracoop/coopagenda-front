@@ -71,13 +71,15 @@ export class SlotsService {
                 title: "a proposal",
                 details: "with some details",
                 accepted: false,
-                id: 2
+                id: 2,
+                user: "2"
               },
               {
                 title: "a better proposal",
                 details: "with better details",
                 accepted: true,
-                id: 1
+                id: 1,
+                user: "1"
               }
             ],
             user: "1",
@@ -90,13 +92,15 @@ export class SlotsService {
                 title: "a proposal",
                 details: "with some details",
                 accepted: false,
-                id: 2
+                id: 2,
+                user: "1"
               },
               {
                 title: "a better proposal",
                 details: "with better details",
                 accepted: true,
-                id: 1
+                id: 1,
+                user: "2"
               }
             ],
             user: "1",
