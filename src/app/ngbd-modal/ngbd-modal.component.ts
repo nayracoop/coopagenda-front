@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { ModalCreateProposalContent } from '../modal-create-proposal/modal-create-proposal.component'
 import { ModalCreateSlotContent } from '../modal-create-slot/modal-create-slot.component';
+import { ModalViewProposalContent } from '../modal-view-proposal/modal-view-proposal.component'
+
 
 /*    SUPER DUMMY CONTENT FOR MOCKUP PURPOSES 
     --- erase after all content is created ---
@@ -52,19 +54,27 @@ export class NgbdModalContent {
 export class NgbdModalComponent {
   @Input() label;
   @Input() id;
+  @Input() proposal;
+  @Input() slot;
+
 
   content = {
     createSlot: ModalCreateSlotContent,
     createProposal: ModalCreateProposalContent,
     editSlot: NgbdModalContent,
     editProposal: NgbdModalContent,
-    viewProposal: NgbdModalContent
+    viewProposal: ModalViewProposalContent
   }
   constructor(private modalService: NgbModal) { }
 
   public open(id) {
     const modalRef = this.modalService.open(this.content[id]);
     // @input to child is sent like this 
-    // modalRef.componentInstance.name = 'World';
+    if (id === "viewProposal" || id === "editProposal" ) {
+      modalRef.componentInstance.proposal = this.proposal;
+    }
+    if (id === "editSlot") {
+      modalRef.componentInstance.slot = this.slot;
+    }
   }
 }

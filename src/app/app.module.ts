@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { ModalCreateSlotContent } from './modal-create-slot/modal-create-slot.component';
 import { ModalCreateProposalContent } from './modal-create-proposal/modal-create-proposal.component';
 import { NgbdModalComponent, NgbdModalContent } from './ngbd-modal/ngbd-modal.component';
+import { ModalViewProposalContent } from './modal-view-proposal/modal-view-proposal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgbdModalComponent, NgbdModalContent } from './ngbd-modal/ngbd-modal.co
     ModalCreateSlotContent,
     ModalCreateProposalContent,
     NgbdModalComponent,
-    NgbdModalContent // delete after all content is created
+    NgbdModalContent,
+    ModalViewProposalContent // delete after all content is created
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { NgbdModalComponent, NgbdModalContent } from './ngbd-modal/ngbd-modal.co
   entryComponents: [
     ModalCreateSlotContent,
     ModalCreateProposalContent,
+    ModalViewProposalContent,
     NgbdModalContent // delete after all content is created
 
   ],

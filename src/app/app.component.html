@@ -14,14 +14,19 @@
           <div class="row">
             <h4 class="col-4">{{slot.begin}}</h4>
             <p class="col-4">{{slot.duration}} minutes</p>
-            <ngbd-modal *ngIf="user.isAdmin" label="Edit slot" id="editSlot" class="col-3"></ngbd-modal>
+            <ngbd-modal *ngIf="user.isAdmin" 
+              label="Edit slot" 
+              id="editSlot" 
+              class="col-3"
+              [slot]="slot"
+              ></ngbd-modal>
           </div>
         </div>
         <div class="card-body">
           <div  *ngFor="let proposal of slot.proposals" class="card mb-2 proposal">
             <h5 class="card-title">{{proposal.title}}</h5>
-            <ngbd-modal label="View proposal" id="viewProposal"></ngbd-modal>
-            <ngbd-modal label="Edit proposal" *ngIf="proposal.user === user.id" id="editProposal"></ngbd-modal>
+            <ngbd-modal label="View proposal" id="viewProposal" [proposal]="proposal"></ngbd-modal>
+            <ngbd-modal label="Edit proposal" id="editProposal" [proposal]="proposal" *ngIf="proposal.user === user.id" ></ngbd-modal>
           </div>
         </div>
       </div>
