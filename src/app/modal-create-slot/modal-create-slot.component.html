@@ -1,4 +1,4 @@
-<form #createSlot (ngSubmit)="save({date:date.value})">
+<form #createSlotForm="ngForm" (ngSubmit)="save(createSlotForm.value)">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-create-slot-title">Create new slot</h4>
     <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
@@ -7,23 +7,34 @@
   </div>
   <div class="modal-body">
       <div class="form-group">
-        <label for="dateOfNewSlot">new slot date</label>
+        <label for="date">new slot date</label>
         <div class="input-group">
           <input 
-              id="dateOfNewSlot" 
+              id="date"
               class="form-control" 
               placeholder="yyyy-mm-dd" 
-              name="dp" 
+              name="date" 
               ngbDatepicker 
-              #date
+              ngModel
               #dp="ngbDatepicker">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
           </div>
         </div>
       </div>
+      <div class="form-group">
+        <label for="duration">duration</label>
+        <input
+          type="number"
+          class="form-control"
+          id="duration"
+          required
+          ngModel
+          name="duration"
+        />
+      </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark btn-success" (click)="save({date:date.value})">create</button>
+    <button type="button" class="btn btn-outline-dark btn-success" (click)="save(createSlotForm.value)">create</button>
   </div>
 </form>
