@@ -3,6 +3,7 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { ModalCreateProposalContent } from '../modal-create-proposal/modal-create-proposal.component'
 import { ModalCreateSlotContent } from '../modal-create-slot/modal-create-slot.component';
 import { ModalViewProposalContent } from '../modal-view-proposal/modal-view-proposal.component'
+import { ModalEditProposalContent } from '../modal-edit-proposal/modal-edit-proposal.component'
 
 
 /*    SUPER DUMMY CONTENT FOR MOCKUP PURPOSES 
@@ -62,7 +63,7 @@ export class NgbdModalComponent {
     createSlot: ModalCreateSlotContent,
     createProposal: ModalCreateProposalContent,
     editSlot: NgbdModalContent,
-    editProposal: NgbdModalContent,
+    editProposal: ModalEditProposalContent,
     viewProposal: ModalViewProposalContent
   }
   constructor(private modalService: NgbModal) { }

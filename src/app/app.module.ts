@@ -14,6 +14,7 @@ import { ModalCreateSlotContent } from './modal-create-slot/modal-create-slot.co
 import { ModalCreateProposalContent } from './modal-create-proposal/modal-create-proposal.component';
 import { NgbdModalComponent, NgbdModalContent } from './ngbd-modal/ngbd-modal.component';
 import { ModalViewProposalContent } from './modal-view-proposal/modal-view-proposal.component';
+import { ModalEditProposalContent } from './modal-edit-proposal/modal-edit-proposal.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ModalViewProposalContent } from './modal-view-proposal/modal-view-propo
     ModalCreateProposalContent,
     NgbdModalComponent,
     NgbdModalContent,
-    ModalViewProposalContent // delete after all content is created
+    ModalViewProposalContent,
+    ModalEditProposalContent, // delete after all content is created
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { ModalViewProposalContent } from './modal-view-proposal/modal-view-propo
     ModalCreateSlotContent,
     ModalCreateProposalContent,
     ModalViewProposalContent,
+    ModalEditProposalContent,
     NgbdModalContent // delete after all content is created
 
   ],
