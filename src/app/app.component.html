@@ -10,7 +10,7 @@
     </div>
     <main class="col-10">
       <div>lista de slots</div>
-      <div *ngFor="let slot of slots.data" class="card">
+      <div *ngFor="let slot of slots" class="card">
         <h4>{{slot.id}}</h4>
         <p>{{slot.date}}</p>
         <ngbd-modal *ngIf="user.isAdmin" label="Edit slot" id="editSlot"></ngbd-modal>

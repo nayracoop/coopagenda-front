@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators'
+import { Observable, of, throwError } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+import { Slot, Proposal} from './interfaces'
 
 @Injectable({
   providedIn: 'root'
@@ -51,17 +52,19 @@ export class SlotsService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  fetchSlots() {
+  fetchSlots(): Observable<Slot[]> {
     // handle query
-    this.http
-    .get(
+    return this.http.get<Slot[]>(
       this.slotsUrl, 
       this.httpOptions
     )
+    .pipe(
+      catchError(e => {
+        console.log(e);
+        return of([]);
+      })
+    )
     // .pipe(map()) to convert response 
-    .subscribe(res => {
-      console.log(res)
-    })  
   }
 
   createSlot(data: {date:string, duration: number}) {
