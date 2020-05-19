@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {Proposal} from '../interfaces'
+import { UserService } from '../user.service'
+
 
 @Component({
   selector: 'app-modal-view-proposal',
@@ -12,6 +14,7 @@ export class ModalViewProposalContent implements OnInit {
 
   constructor(    
     public activeModal: NgbActiveModal,
+    public user: UserService
   ) {}
 
   ngOnInit(): void {
