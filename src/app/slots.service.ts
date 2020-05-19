@@ -60,8 +60,48 @@ export class SlotsService {
     )
     .pipe(
       catchError(e => {
+        // for now, return dummy data for mockup
         console.log(e);
-        return of([]);
+        return of([
+          {
+            begin: "2020-05-03",
+            duration: 40,
+            proposals: <Proposal[]>[
+              {
+                title: "a proposal",
+                details: "with some details",
+                accepted: false,
+                id: 2
+              },
+              {
+                title: "a better proposal",
+                details: "with better details",
+                accepted: true,
+                id: 1
+              }
+            ],
+            user: "1",
+          },
+          {
+            begin: "2020-05-15",
+            duration: 60,
+            proposals: <Proposal[]>[
+              {
+                title: "a proposal",
+                details: "with some details",
+                accepted: false,
+                id: 2
+              },
+              {
+                title: "a better proposal",
+                details: "with better details",
+                accepted: true,
+                id: 1
+              }
+            ],
+            user: "1",
+          }
+        ]);
       })
     )
     // .pipe(map()) to convert response 

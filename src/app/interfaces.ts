@@ -1,4 +1,5 @@
 export interface Proposal {
+  id: number; // im going to need an id to edit/delete proposals
   accepted: boolean;
   details: string;
   hosted_by: string;
