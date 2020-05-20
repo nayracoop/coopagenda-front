@@ -1,13 +1,60 @@
-<div class="modal-header">
-  <h4 class="modal-title">edit proposal</h4>
-  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="modal-body">
-  <p>Hello, {{proposal.title}}!</p>
-</div>
-<div class="modal-footer">
-  <button  class="btn btn-outline-success">Submit</button>
-  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Close</button>
-</div>
+<form #editProposalForm="ngForm" (ngSubmit)="save(editProposalForm.value)">
+  <div class="modal-header">
+    <h4 class="modal-title">edit proposal</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="title">title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="proposal.title"
+        name="title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="details">details</label>
+      <textarea
+        class="form-control"
+        id="details"
+        [(ngModel)]="proposal.details"
+        name="details"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="hosted_by">hosted_by</label>
+      <input
+        class="form-control"
+        id="hosted_by"
+        [(ngModel)]="proposal.hosted_by"
+        name="hosted_by"
+      />
+    </div>
+    <div class="form-group">
+      <label for="hosting_coop">hosting_coop</label>
+      <input
+        class="form-control"
+        id="hosting_coop"
+        [(ngModel)]="proposal.hosting_coop"
+        name="hosting_coop"
+      />
+    </div>
+    <div class="form-group">
+      <label for="slots">hosting_coop</label>
+      <input
+        class="form-control"
+        id="hosting_coop"
+        [(ngModel)]="proposal.hosting_coop"
+        name="hosting_coop"
+      />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button  class="btn btn-outline-success">Submit</button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Close</button>
+  </div>
+</form>

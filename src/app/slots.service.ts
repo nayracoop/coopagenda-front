@@ -71,6 +71,8 @@ export class SlotsService {
                 title: "a proposal",
                 details: "with some details",
                 accepted: false,
+                hosted_by: "martu",
+                hosting_coop:"nayra",
                 id: 2,
                 user: "2"
               },
@@ -78,6 +80,8 @@ export class SlotsService {
                 title: "a better proposal",
                 details: "with better details",
                 accepted: true,
+                hosted_by: "jose",
+                hosting_coop:"nayra",
                 id: 1,
                 user: "1"
               }
@@ -92,12 +96,16 @@ export class SlotsService {
                 title: "a proposal",
                 details: "with some details",
                 accepted: false,
+                hosted_by: "martu",
+                hosting_coop:"nayra",
                 id: 2,
                 user: "1"
               },
               {
                 title: "a better proposal",
                 details: "with better details",
+                hosted_by: "naska",
+                hosting_coop: "camplight",
                 accepted: true,
                 id: 1,
                 user: "2"
