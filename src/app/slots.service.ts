@@ -17,7 +17,8 @@ export class SlotsService {
   public data = [
     { 
       id: 11,
-      date: "2020-02-10",
+      user_id: 1,
+      begin: "2020-02-10",
       proposals: [
         { id:2,
           userId: 1,
@@ -39,12 +40,14 @@ export class SlotsService {
     },
     { 
       id: 12,
-      date: "2020-03-10",
+      begin: "2020-03-10",
+      user_id: 1,
       proposals: []
     },
     { 
       id: 14,
-      date: "2020-05-10",
+      begin: "2020-05-10",
+      user_id: 1,
       proposals: []
     }
   ]
@@ -64,7 +67,9 @@ export class SlotsService {
         console.log(e);
         return of([
           {
-            begin: "2020-05-03",
+            id: 11,
+            user_id: 1,
+            begin: new Date("2020-05-03"),
             duration: 40,
             proposals: <Proposal[]>[
               {
@@ -74,7 +79,7 @@ export class SlotsService {
                 hosted_by: "martu",
                 hosting_coop:"nayra",
                 id: 2,
-                user: "2"
+                user_id: 2
               },
               {
                 title: "a better proposal",
@@ -83,13 +88,14 @@ export class SlotsService {
                 hosted_by: "jose",
                 hosting_coop:"nayra",
                 id: 1,
-                user: "1"
+                user: 1
               }
             ],
-            user: "1",
           },
           {
-            begin: "2020-05-15",
+            id: 12,
+            user_id: 1,
+            begin: new Date("2020-05-13"),
             duration: 60,
             proposals: <Proposal[]>[
               {
@@ -99,7 +105,7 @@ export class SlotsService {
                 hosted_by: "martu",
                 hosting_coop:"nayra",
                 id: 2,
-                user: "1"
+                user_id: 1
               },
               {
                 title: "a better proposal",
@@ -108,10 +114,9 @@ export class SlotsService {
                 hosting_coop: "camplight",
                 accepted: true,
                 id: 1,
-                user: "2"
+                user_id: 2
               }
-            ],
-            user: "1",
+            ]
           }
         ]);
       })

@@ -1,22 +1,25 @@
 export interface Proposal {
-  id: number; // im going to need an id to edit/delete proposals
-  accepted: boolean;
-  details: string;
+  id: number;
+  accepted?: boolean;
+  details?: string;
   hosted_by: string;
   hosting_coop: string;
   title: string;
-  user: string;
-  // user: number/id ? como sería el tipo? o sería un objeto con todos los datos del user
-  // slot: number/id ? como sería el tipo? o sería un objeto con todos los datos del slot
+  user_id: number;
+  slot_ids: Array<number>;
 }
-
 export interface Slot {
-  begin: string;
+  id: number
+  begin: Date;
   duration: number;
-  proposals: Proposal[];
-  user: string;
-	// begin: utc_datetime;
-	// duration: integer;
-	// user: number/id ? como sería el tipo
-  //       proposals: array de objetos proposal
+  user_id: number;
+  proposals?: Array<Proposal>;
+}
+export interface User {
+  id: number;
+  admin?: boolean;
+  avatar: string;
+  email: string;
+  provider: string;
+  username: string;
 }
