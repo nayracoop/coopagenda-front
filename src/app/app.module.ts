@@ -2,45 +2,37 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-//Translation
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { AppRoutingModule } from './app-routing.module';
+import { DataModelModule } from './data/data.module';
 import { AppComponent } from './app.component';
-import { ModalCreateSlotContent } from './modal-create-slot/modal-create-slot.component';
-import { ModalCreateProposalContent } from './modal-create-proposal/modal-create-proposal.component';
-import { NgbdModalComponent, NgbdModalContent } from './ngbd-modal/ngbd-modal.component';
-import { ModalViewProposalContent } from './modal-view-proposal/modal-view-proposal.component';
-import { ModalEditProposalContent } from './modal-edit-proposal/modal-edit-proposal.component';
+import { ProposalForm } from './proposals/proposalForm.component';
+import { ProposalItem } from './proposals/proposalItem.component';
+import { ProposalList } from './proposals/proposalList.component';
+import { ProposalView } from './proposals/proposalView.component';
+
+import { SlotForm } from './slots/slotForm.component';
+import { SlotItem } from './slots/slotItem.component';
+import { SlotList } from './slots/slotList.component';
+
+import { Header } from './header.component';
 
 @NgModule({
   declarations: [
+    Header,
     AppComponent,
-    ModalCreateSlotContent,
-    ModalCreateProposalContent,
-    NgbdModalComponent,
-    NgbdModalContent,
-    ModalViewProposalContent,
-    ModalEditProposalContent, // delete after all content is created
+    ProposalForm,
+    ProposalItem,
+    ProposalList,
+    ProposalView,
+    SlotForm,
+    SlotItem,
+    SlotList,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  entryComponents: [
-    ModalCreateSlotContent,
-    ModalCreateProposalContent,
-    ModalViewProposalContent,
-    ModalEditProposalContent,
-    NgbdModalContent // delete after all content is created
-
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, NgbModule, FormsModule, DataModelModule],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
