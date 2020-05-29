@@ -1,11 +1,11 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { TSlot } from './entities';
+import { TSlot, TSlotRes } from './entities';
 
 export type SlotProp = keyof TSlot;
 
 export abstract class DataSourceImpl {
-  abstract loadSlots(): Observable<any>;
+  abstract loadSlots(): Observable<TSlotRes>;
   abstract storeSlot(slot: TSlot): Observable<number>;
 }
 
@@ -33,12 +33,12 @@ export class DataSource {
   protected getData(): void {
     this._slots = [];
     this.impl.loadSlots().subscribe(
-      ({data}) => {
+      ({ data }) => {
         data.forEach((p) => {
           this._slots.push(p);
         });
       },
-      (err) => console.log('HTTP Error', err)
+      (err) => console.log('HTTP Error', err),
     );
   }
 

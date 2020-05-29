@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { DataSourceImpl } from './dataSource';
-import { TSlot } from './entities';
+import { TSlot, TSlotRes } from './entities';
 
 const urls = {
   slots: 'http://localhost:4000/api/slots',
@@ -20,8 +20,8 @@ export class RemoteDataSource extends DataSourceImpl {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  loadSlots(): Observable<any> {
-    return this.http.get(urls.slots, this.httpOptions);
+  loadSlots(): Observable<TSlotRes> {
+    return this.http.get<TSlotRes>(urls.slots, this.httpOptions);
   }
 
   storeSlot(slot: TSlot): Observable<number> {

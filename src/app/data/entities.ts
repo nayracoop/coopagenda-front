@@ -15,6 +15,9 @@ export type TSlot = {
   user_id: number;
   proposals?: TProposal[];
 };
+export type TSlotRes = {
+  data: TSlot[];
+}
 export type TUser = {
   id: number;
   admin?: boolean;

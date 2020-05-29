@@ -12,8 +12,6 @@ export class AppComponent {
   title = 'Coopagenda';
 
   get slots(): TSlot[] {
-    const slots = this.dataSource.getSlots('id');
-    console.log(slots);
-    return slots;
+    return this.dataSource.getSlots('id');
   }
 }
