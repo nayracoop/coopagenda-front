@@ -1,12 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { DataSource } from '../data/dataSource';
 import { TSlot } from '../data/entities';
 
 @Component({
-  selector: 'app-slot-list',
   templateUrl: './slotList.component.html',
   styleUrls: ['./slotList.component.css'],
 })
 export class SlotList {
-  @Input()
-  slots: TSlot[];
+  constructor(public dataSource: DataSource) {
+  }
+  title = 'Coopagenda';
+
+  get slots(): TSlot[] {
+    return this.dataSource.getSlots('id');
+  }
 }

@@ -25,6 +25,7 @@ export type TUser = {
   email: string;
   provider: string;
   username: string;
+  token: string;
 };
 
 export class Slot {

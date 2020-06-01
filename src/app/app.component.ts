@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { DataSource } from './data/dataSource';
-import { TSlot } from './data/entities';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +6,5 @@ import { TSlot } from './data/entities';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(public dataSource: DataSource) {}
   title = 'Coopagenda';
-
-  get slots(): TSlot[] {
-    return this.dataSource.getSlots('id');
-  }
 }

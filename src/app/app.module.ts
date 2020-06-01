@@ -17,7 +17,9 @@ import { SlotForm } from './slots/slotForm.component';
 import { SlotItem } from './slots/slotItem.component';
 import { SlotList } from './slots/slotList.component';
 
+import { WelcomeComponent } from './auth/welcome.component';
 import { Header } from './header.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -30,8 +32,15 @@ import { Header } from './header.component';
     SlotForm,
     SlotItem,
     SlotList,
+    WelcomeComponent,
   ],
-  imports: [BrowserModule, NgbModule, FormsModule, DataModelModule],
+  imports: [
+    BrowserModule,
+    NgbModule,
+    FormsModule,
+    DataModelModule,
+    AppRoutingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

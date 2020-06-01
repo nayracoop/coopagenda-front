@@ -1,4 +1,12 @@
 <nav ngbNav class="navbar navbar-default navbar-header row">
   <h1 class="navbar-brand">coopagenda</h1>
-  <div ngbNavItem>logged in ? logged-user : third-party-login</div>
+  <div ngbNavItem>
+    <div *ngIf="currentUser; else login">
+      {{currentUser.username}}
+      <img [src]=currentUser.avatar alt="">
+    </div>
+    <ng-template #login>
+      <a href="{{ authUrl }}">Login With Github</a>
+    </ng-template>
+  </div>
 </nav>

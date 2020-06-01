@@ -4,10 +4,11 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { DataSourceImpl } from './dataSource';
 import { TSlot, TSlotRes } from './entities';
+import { environment } from '../../environments/environment';
 
 const urls = {
-  slots: 'http://localhost:4000/api/slots',
-  proposals: 'http://localhost:4000/api/proposals',
+  slots: `${environment.backendUrl}/api/slots`,
+  proposals: `${environment.backendUrl}/api/proposals`,
 };
 
 @Injectable()
