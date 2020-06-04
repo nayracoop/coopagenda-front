@@ -13,17 +13,16 @@ export class WelcomeComponent {
   ) {
     this.route.queryParams.subscribe((params) => {
       const { userId, admin, token, userAvatar, username } = params;
-      const user = this.authService.login({
+      this.authService.login({
         id: userId,
         admin,
         token,
-        avatar: userAvatar,
+        avatar: `${userAvatar}&s=60`,
         username,
         provider: 'github',
         email: '',
       });
+      this.router.navigate(['/']);
     });
-
-    this.router.navigate(['/']);
   }
 }

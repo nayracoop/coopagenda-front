@@ -2,8 +2,15 @@
   <h1 class="navbar-brand">coopagenda</h1>
   <div ngbNavItem>
     <div *ngIf="currentUser; else login">
-      {{currentUser.username}}
-      <img [src]=currentUser.avatar alt="">
+      {{ currentUser.username }}
+      <img [src]="currentUser.avatar" alt="" class="img-thumbnail" />
+      <button
+        type="button"
+        class="btn btn-light ml-1"
+        (click)="handleLogout()"
+      >
+        Logout
+      </button>
     </div>
     <ng-template #login>
       <a href="{{ authUrl }}">Login With Github</a>

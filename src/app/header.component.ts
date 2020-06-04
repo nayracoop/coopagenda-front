@@ -28,4 +28,9 @@ export class Header {
       }
     )}`;
   }
+
+  handleLogout() {
+    this.authenticationService.logout();
+    this.currentUser = this.authenticationService.currentUserValue;
+  }
 }
